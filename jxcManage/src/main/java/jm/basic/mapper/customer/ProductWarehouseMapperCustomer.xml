@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jm.basic.mapper.customer.ProductWarehouseMapperCustomer" >
+    
+    <sql id="Base_Column_List" >
+        id, userName, passWord, user_sex, nick_name
+    </sql>
+    <sql id="pageSql" >
+        <if test="pageIndex!=null and currentNum!=null">
+			LIMIT ${(pageIndex-1)*currentNum},${currentNum}
+		</if>
+    </sql>
+	
+	<sql id="orderSql">
+			<if test="orderType!=null and orderWay!=null">
+				<if test="orderType==1"><!-- 产品创建时间 -->
+					ORDER BY jpbi.jpbi.created_time ${orderWay}
+				</if>
+				<if test="orderType==2"><!-- 上次更新库存时间  -->
+					ORDER BY jwp.last_updated_time ${orderWay}
+				</if>
+				<if test="orderType==3"><!-- 库存数量 -->
+					ORDER BY jwp.num ${orderWay}
+				</if>
+			</if>
+	</sql>
+		
+    <select id="loadProductWarehouseListData" resultType="jm.basic.bean.queryCustomer.productWarehouseCustomer"  parameterType="Integer">
+       SELECT 
+			jpbi.id as productBaseInfoId,
+			jpbi.product_name,
+			jpbi.operator_user_info_id,
+			jpbi.created_time,
+			jpbi.last_updated_time,
+			jpbi.base_attr_name1,
+			jpbi.base_attr_val1,
+			jwp.id as warehouseInfoId,
+			jwp.num,
+			jwp.remark,
+			jwp.units
+		from jm_product_base_info jpbi 
+		LEFT JOIN jm_warehouse_product jwp ON jpbi.id=jwp.product_base_info_id
+		WHERE jpbi.id= #{productBaseInfoId}
+		
+		<include refid="orderSql"/>
+		<include refid="pageSql"/>
+    </select>
+</mapper>
