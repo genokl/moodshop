@@ -12,11 +12,16 @@ import jm.basic.bean.WarehouseProduct;
  */
 public class ProductVo  {
 
-	private ProductBaseInfo productBaseInfo;
-	private WarehouseProduct warehouseProduct;
+	private Integer operatorUserInfoId;// 操作人:用户id
+	private Date createdTime;// 创建时间
+	private Date lastUpdatedTime;// 上次更新时间
+	private String productName;// 产品名称
+	private Integer productClassId;// 产品分类表id
 	
-	private Integer pageIndex;		// 需要查询的页码
-	private Integer currentNum;		// 每页查询的数量
+	private Integer num;//库存数量
+	
+	private Integer pageNo;		// 需要查询的页码
+	private Integer pageSize;	// 每页查询的数量
 	
 	/**
 	 * 默认根据上次更新库存时间倒序
@@ -33,29 +38,54 @@ public class ProductVo  {
 	 */
 	private String orderWay ="desc";
 	
-	public ProductBaseInfo getProductBaseInfo() {
-		return productBaseInfo;
+	
+	public Integer getOperatorUserInfoId() {
+		return operatorUserInfoId;
 	}
-	public void setProductBaseInfo(ProductBaseInfo productBaseInfo) {
-		this.productBaseInfo = productBaseInfo;
+	public void setOperatorUserInfoId(Integer operatorUserInfoId) {
+		this.operatorUserInfoId = operatorUserInfoId;
 	}
-	public WarehouseProduct getWarehouseProduct() {
-		return warehouseProduct;
+	public Date getCreatedTime() {
+		return createdTime;
 	}
-	public void setWarehouseProduct(WarehouseProduct warehouseProduct) {
-		this.warehouseProduct = warehouseProduct;
+	public void setCreatedTime(Date createdTime) {
+		this.createdTime = createdTime;
 	}
-	public Integer getPageIndex() {
-		return pageIndex;
+	public Date getLastUpdatedTime() {
+		return lastUpdatedTime;
 	}
-	public void setPageIndex(Integer pageIndex) {
-		this.pageIndex = pageIndex;
+	public void setLastUpdatedTime(Date lastUpdatedTime) {
+		this.lastUpdatedTime = lastUpdatedTime;
 	}
-	public Integer getCurrentNum() {
-		return currentNum;
+	public String getProductName() {
+		return productName;
 	}
-	public void setCurrentNum(Integer currentNum) {
-		this.currentNum = currentNum;
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public Integer getProductClassId() {
+		return productClassId;
+	}
+	public void setProductClassId(Integer productClassId) {
+		this.productClassId = productClassId;
+	}
+	public Integer getNum() {
+		return num;
+	}
+	public void setNum(Integer num) {
+		this.num = num;
+	}
+	public Integer getPageNo() {
+		return pageNo;
+	}
+	public void setPageNo(Integer pageNo) {
+		this.pageNo = pageNo;
+	}
+	public Integer getPageSize() {
+		return pageSize;
+	}
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
 	}
 	public Integer getOrderType() {
 		return orderType;

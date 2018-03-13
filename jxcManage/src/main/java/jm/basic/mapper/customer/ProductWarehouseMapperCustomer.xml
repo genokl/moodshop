@@ -6,8 +6,8 @@
         id, userName, passWord, user_sex, nick_name
     </sql>
     <sql id="pageSql" >
-        <if test="pageIndex!=null and currentNum!=null">
-			LIMIT ${(pageIndex-1)*currentNum},${currentNum}
+        <if test="pageNo!=null and pageSize!=null">
+			LIMIT ${(pageNo-1)*pageSize},${pageSize}
 		</if>
     </sql>
 	

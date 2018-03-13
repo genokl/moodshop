@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li class="role" data-role='10'>
             <div class="link"><i class="fa fa-paint-brush"></i><span class="glyphicon glyphicon-th-large mr10 "></span>内容管理<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
-                <li class="role" data-role='10'><a href="/jump/topage.do?pagePath=page/console/article&pageName=article_add"><span class="glyphicon glyphicon-search mr10 "></span>新建文章</a></li>
+                <li class="role" data-role='10'><a href="/jump/topage.do?pagePath=page/console/warehouse&pageName=warehouseList"><span class="glyphicon glyphicon-search mr10 "></span>查询库存</a></li>
                 <li class="role" data-role='10'><a href="/jump/topage.do?pagePath=page/console/article&pageName=article_list"><span class="glyphicon glyphicon-plus mr10 "></span>文章列表</a></li>
                 <li class="role" data-role='10'><a href="article_toArticleDetailPage?articleId=5"><span class="glyphicon glyphicon-plus mr10 "></span>公司概况</a></li>
                 <li class="role" data-role='10'><a href="article_toArticleDetailPage?articleId=6"><span class="glyphicon glyphicon-plus mr10 "></span>联系我们</a></li>

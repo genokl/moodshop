@@ -25,6 +25,7 @@ public class productWarehouseCustomer  {
 	private String units;//计量单位
 	
 	
+	
 	public Integer getProductBaseInfoId() {
 		return productBaseInfoId;
 	}

@@ -17,8 +17,6 @@ public class WarehouseProduct {
 	private Integer remark;// 备注
 	private String units;// 存储单位，计量单位
 	private Integer operatorUserInfoId;// 操作用户Id
-	private Date createdTime;// 创建时间
-	private Date lastUpdatedTime;// 上次更新时间
 	
 	
 	public Integer getId() {
@@ -63,18 +61,7 @@ public class WarehouseProduct {
 	public void setOperatorUserInfoId(Integer operatorUserInfoId) {
 		this.operatorUserInfoId = operatorUserInfoId;
 	}
-	public Date getCreatedTime() {
-		return createdTime;
-	}
-	public void setCreatedTime(Date createdTime) {
-		this.createdTime = createdTime;
-	}
-	public Date getLastUpdatedTime() {
-		return lastUpdatedTime;
-	}
-	public void setLastUpdatedTime(Date lastUpdatedTime) {
-		this.lastUpdatedTime = lastUpdatedTime;
-	}
+
 	
 	
 	
